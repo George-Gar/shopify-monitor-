@@ -1,12 +1,9 @@
-import requests
 import json
 from discord_webhook import DiscordWebhook as dw
 from discord_webhook import DiscordEmbed as de
 import aiohttp
 import asyncio
 import aiofiles
-import sqlite3
-import pprint as pr
 
 class shopify():
 

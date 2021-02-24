@@ -1,0 +1,6 @@
+json
+discord-webhook
+aiohttp
+asyncio
+aiofiles
+numpy
