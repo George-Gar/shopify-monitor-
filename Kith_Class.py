@@ -168,12 +168,13 @@ class shopify():
 
 			#remove product name from checked list if they are all out of stock to check for them again
 			if True not in self.availability:
+				self.availability = []
 				if self.name in self.checked:
 					self.checked.remove(self.name)
 				
-		#CHECK FOR IN STOCK ITEMS
-		#loop through variants of each product
-		# for variant in product['variants']:
+			#CHECK FOR IN STOCK ITEMS
+			#loop through variants of each product
+			# for variant in product['variants']:
 			# self.in_stock = variant['available']
 			#check to see if at least one variant in in stock so that we can post it
 			#then reset self.availability so it doesn't spam
@@ -204,6 +205,9 @@ class shopify():
 					if self.sku in self.oos and self.in_stock == True:
 						await self.restocked(self.name, self.url, self.price, self.in_stock, self.size, self.img)
 						self.oos.remove(self.sku)
+						await asyncio.sleep(1)
+
+		await asyncio.sleep(8)
 
 
 
@@ -212,13 +216,16 @@ class shopify():
 
 
 
-footwear = shopify('https://kith.com/products.json', 'kith.txt', 'kith.com',
+kith = shopify('https://kith.com/products.json', 'kith.txt', 'kith.com',
 'https://discord.com/api/webhooks/774780175841755178/usLjqKHxzAtd6QleitBDPAkAD1KJBG32u9BToZrCtSh6E5veURK-v_ObMcMzAP_888ho')
 
-mens_apparel = shopify('https://kith.com/collections/mens-apparel/products.json', 'kith.txt', 'kith.com',
+kith_apparel = shopify('https://kith.com/collections/mens-apparel/products.json', 'kith.txt', 'kith.com',
 'https://discord.com/api/webhooks/774780175841755178/usLjqKHxzAtd6QleitBDPAkAD1KJBG32u9BToZrCtSh6E5veURK-v_ObMcMzAP_888ho')
 
-palace = shopify('https://www.shoepalace.com/products.json', 'shoe_palace.txt', 'shoepalace.com',
+shoe_palace = shopify('https://www.shoepalace.com/products.json', 'shoe_palace.txt', 'shoepalace.com',
 'https://discord.com/api/webhooks/814008785403510824/tMAq-yBkZbXoFYga2_YRxbFXUny-sMxwpzzvDzo_wDtPyREF-UdKyTn_fzMQGfIaMHOP')
+
+bape = shopify('https://bape.com/products.json', 'bape.txt','bape.com',
+'https://discord.com/api/webhooks/814054848650805248/Rf8s6nmCr5i8-jIUWG1RlQ60CfmGsl509uEdmg-kgMKeyAzgykJZew2_qSVTH5E6V-Hn')
 
 
