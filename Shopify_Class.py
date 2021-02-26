@@ -79,7 +79,9 @@ class shopify():
 		#create webhook
 		lab_hook = dw(url=self.webhook)
 
+		#partner hooks
 		# ghost_hook = dw(url=self.ghost_webhook)
+		
 		#create embed
 		embed = de(title=self.store_domain, description=f"[{title}]({url})")
 		embed.set_thumbnail(url=img)
@@ -224,5 +226,7 @@ shoe_palace = shopify('https://www.shoepalace.com/products.json', 'shoe_palace.t
 
 bape = shopify('https://bape.com/products.json', 'bape.txt','bape.com',
 'https://discord.com/api/webhooks/814054848650805248/Rf8s6nmCr5i8-jIUWG1RlQ60CfmGsl509uEdmg-kgMKeyAzgykJZew2_qSVTH5E6V-Hn')
+
+
 
 

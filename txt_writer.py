@@ -1,9 +1,9 @@
 import numpy as np
 
-product_names = np.array(['Jordan', 'Nike',
-                          'Nike Air Jordan 12 Retro Low SE', 'Navy', 'III', 'Rider', 'Zoom Freak'])
+product_names = np.array(['Jordan', 'Nike', 'SB', 'Dunk', 'High', 'Vast',
+	'Grey', 'Football', 'Vast-Grey', 'Football-Grey'])
 
 for p in product_names:
-	with open('bape.txt', 'a') as f:
+	with open('undefeated.txt', 'a') as f:
 		f.write(f'{p}\n')
 		
